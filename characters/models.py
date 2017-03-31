@@ -10,11 +10,11 @@ class Character(models.Model):
     description = models.CharField(max_length=255)
     times_killed = models.IntegerField(default=0, )
     location_of_death = models.ForeignKey(Location, blank=True, null=True, related_name='location_of_death')
-    murderer = models.ForeignKey('self', blank=False, null=True)
+    murderer = models.ForeignKey('self', blank=True, null=True)
     manner_of_death = models.CharField(max_length=255, blank=True, null=True)
     times_won_throne = models.IntegerField(default=0)
     times_survived = models.IntegerField(default=0)
-    image = models.ImageField(upload_to='/images/', null=True)
+    image = models.ImageField(upload_to='/images/', null=True, blank=True)
 
     def __str__(self):
         return self.first_name + " " + self.last_name
