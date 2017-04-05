@@ -11,5 +11,6 @@ location_choices = ()
 
 
 class FateForm(forms.Form):
-    name = forms.TextInput()
-    location = forms.ChoiceField(widget=forms.Select(choices=LOCATION_CHOICES))
+    test = forms.TextInput()
+    your_name = forms.CharField(label='Your name', max_length=100, widget=forms.TextInput())
+    # location = forms.ChoiceField(widget=forms.Select(choices=LOCATION_CHOICES))

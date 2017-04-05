@@ -5,8 +5,12 @@
     <title>Title</title>
 </head>
 <body>
-<h1>{{ character.first_name }} {{ character.last_name }}</h1>
-<p>{{ character.description }}</p>
-{{ form }}
+{#<h1>{{ character.first_name }} {{ character.last_name }}</h1>#}
+{#<p>{{ character.description }}</p>#}
+<form action="/your-name/" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    {#    <input type="submit" value="Submit"/>#}
+</form>
 </body>
 </html>
